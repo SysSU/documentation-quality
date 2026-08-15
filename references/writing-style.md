@@ -3,6 +3,7 @@
 ## Prefer usable prose
 
 - Lead sections with the conclusion, action, or decision they support.
+- Be concise and direct. Use the shortest form that preserves necessary context, evidence, limitations, and safety information. Split long paragraphs when they contain multiple ideas.
 - Use the reader's vocabulary and define unavoidable terms once.
 - Prefer concrete nouns and verbs over abstractions and promotional language.
 - Keep prerequisites before instructions and expected results after actions.
