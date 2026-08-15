@@ -64,13 +64,17 @@ Common locations:
 
 Cursor can use the repository's compact [`AGENTS.md`](AGENTS.md) as a project rule; see [`integrations/cursor.md`](integrations/cursor.md). Other agents can load `SKILL.md` directly or copy its routing instructions into their instruction mechanism.
 
-Invoke it explicitly when supported:
+Supported agents can activate the skill automatically when a request matches its description. Invocation differs by agent:
 
-```text
-Use $documentation-quality to write a PRD from these notes.
-Use $documentation-quality to add this information to my AI brain.
-Use $documentation-quality to audit this vault for conflicting sources of truth.
-```
+| Agent | How to invoke |
+| --- | --- |
+| Claude Code | `/documentation-quality` |
+| Codex | `$documentation-quality` |
+| Gemini CLI | Ask for a matching task and approve activation; use `/skills` to manage skills. |
+| GitHub Copilot CLI | `/documentation-quality` |
+| Cursor | Use the project rule or attach `@documentation-quality/SKILL.md` as context. |
+
+Ordinary requests such as “write a PRD from these notes,” “add this information to my AI brain,” or “audit this vault for conflicting sources of truth” can trigger automatic activation. Use the explicit form when you need to guarantee that the skill is applied.
 
 See [`integrations/`](integrations/) for platform-specific setup and [`hooks/claude-code/`](hooks/claude-code/) for an optional, non-blocking edit reminder.
 
@@ -106,10 +110,10 @@ Store the profile with the content it governs—not inside this skill—so updat
 
 For project-scoped rules, you can put a short style guide directly in `AGENTS.md` or `CLAUDE.md`. If it becomes long, keep it in a separate file and link to it from those instructions. `AGENTS.md` works across agents that support the convention; `CLAUDE.md` is specific to Claude Code. Some vault and wiki environments do not load either file automatically, so name the profile in your request when necessary.
 
-Then name it when invoking the skill:
+Then tell the agent which profile to apply. This prompt works regardless of the agent's explicit-invocation syntax:
 
 ```text
-Use $documentation-quality and follow ./DOCUMENTATION_STYLE.md to write this runbook.
+Use the documentation-quality workflow and follow ./DOCUMENTATION_STYLE.md to write this runbook.
 Treat its Required rules as completion criteria.
 ```
 
