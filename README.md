@@ -74,16 +74,44 @@ Use $documentation-quality to audit this vault for conflicting sources of truth.
 
 See [`integrations/`](integrations/) for platform-specific setup and [`hooks/claude-code/`](hooks/claude-code/) for an optional, non-blocking edit reminder.
 
-## Customize
+## Use your own documentation rules (optional)
 
-Keep a strict style guide or documentation profile in the repository, vault, wiki, or user configuration it governs, then point the agent to it:
+The skill works without any setup. Its built-in guidance covers document structure, writing quality, and knowledge-base maintenance.
+
+Add custom rules only when you want the agent to follow an existing style guide or remember documentation conventions for later tasks:
+
+| Need | What to do |
+| --- | --- |
+| One document | Put the extra rules in your request. |
+| One repository, vault, or wiki | Keep a profile in that system and give the agent its path. |
+| All of your projects | Keep a user-level profile and reference it from your agent's user instructions. |
+
+A profile is an ordinary document containing only the rules you want to add or make stricter. For example:
+
+```md
+# Documentation profile
+
+## Required
+- Use sentence-case headings.
+- Link factual claims to their authoritative source.
+
+## Preferred
+- Write concise paragraphs in active voice.
+
+## Terminology
+- Use “workspace,” not “tenant.”
+```
+
+Store the profile with the content it governs—not inside this skill—so updating the skill cannot overwrite your rules. The filename is up to you; `DOCUMENTATION_STYLE.md` is one clear option.
+
+Then name it when invoking the skill:
 
 ```text
-Use $documentation-quality with ./DOCUMENTATION_STYLE.md to write this runbook.
+Use $documentation-quality and follow ./DOCUMENTATION_STYLE.md to write this runbook.
 Treat its Required rules as completion criteria.
 ```
 
-Profiles can control voice, terminology, templates, citations, file naming, metadata, lifecycle rules, and review gates. Narrower custom rules override the built-in defaults; they cannot weaken accuracy, source integrity, safety, privacy, accessibility, or destructive-change safeguards. See [`references/customization.md`](references/customization.md).
+The order is simple: your current request wins, then the closest applicable profile, then broader profiles, then this skill's built-in guidance. Custom style rules cannot override accuracy, source integrity, safety, privacy, or accessibility. For profile scopes, strictness, templates, and conflict handling, see [`references/customization.md`](references/customization.md).
 
 ## Repository map
 
