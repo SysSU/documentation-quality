@@ -83,7 +83,7 @@ Add custom rules only when you want the agent to follow an existing style guide 
 | Need | What to do |
 | --- | --- |
 | One document | Put the extra rules in your request. |
-| One repository, vault, or wiki | Keep a profile in that system and give the agent its path. |
+| One repository, vault, or wiki | Put short rules in its agent instructions, or keep a profile there and link to it. |
 | All of your projects | Keep a user-level profile and reference it from your agent's user instructions. |
 
 A profile is an ordinary document containing only the rules you want to add or make stricter. For example:
@@ -103,6 +103,8 @@ A profile is an ordinary document containing only the rules you want to add or m
 ```
 
 Store the profile with the content it governs—not inside this skill—so updating the skill cannot overwrite your rules. The filename is up to you; `DOCUMENTATION_STYLE.md` is one clear option.
+
+For project-scoped rules, you can put a short style guide directly in `AGENTS.md` or `CLAUDE.md`. If it becomes long, keep it in a separate file and link to it from those instructions. `AGENTS.md` works across agents that support the convention; `CLAUDE.md` is specific to Claude Code. Some vault and wiki environments do not load either file automatically, so name the profile in your request when necessary.
 
 Then name it when invoking the skill:
 
