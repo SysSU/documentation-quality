@@ -1,0 +1,4 @@
+interface:
+  display_name: "Documentation Quality"
+  short_description: "Create and maintain trustworthy documentation"
+  default_prompt: "Use $documentation-quality to improve this document and its place in the larger knowledge base."
