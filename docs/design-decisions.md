@@ -47,3 +47,9 @@ Accepted decisions are superseded or annotated rather than silently rewritten. C
 **Status:** Accepted
 
 The included Claude Code hook only reminds the agent to apply the impact checklist after document edits. It neither blocks work nor attempts automated semantic judgment. Platform hooks are incomplete substitutes for the skill and are not portable across knowledge environments.
+
+## 009 — Layer customization instead of forking the skill
+
+**Status:** Accepted
+
+User, organization, project, and knowledge-base profiles apply as scoped layers over the built-in guidance. Profiles stay with the environment they govern so skill updates do not overwrite them. Strict custom rules become review criteria, but cannot weaken accuracy, source integrity, safety, privacy, accessibility, or destructive-change safeguards.

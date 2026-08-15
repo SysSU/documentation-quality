@@ -74,6 +74,17 @@ Use $documentation-quality to audit this vault for conflicting sources of truth.
 
 See [`integrations/`](integrations/) for platform-specific setup and [`hooks/claude-code/`](hooks/claude-code/) for an optional, non-blocking edit reminder.
 
+## Customize
+
+Keep a strict style guide or documentation profile in the repository, vault, wiki, or user configuration it governs, then point the agent to it:
+
+```text
+Use $documentation-quality with ./DOCUMENTATION_STYLE.md to write this runbook.
+Treat its Required rules as completion criteria.
+```
+
+Profiles can control voice, terminology, templates, citations, file naming, metadata, lifecycle rules, and review gates. Narrower custom rules override the built-in defaults; they cannot weaken accuracy, source integrity, safety, privacy, accessibility, or destructive-change safeguards. See [`references/customization.md`](references/customization.md).
+
 ## Repository map
 
 - [`SKILL.md`](SKILL.md) — lightweight task router and invariant workflow.

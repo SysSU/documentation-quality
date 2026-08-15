@@ -1,6 +1,6 @@
 # Document review
 
-Start by stating the intended audience, reader outcome, document authority, and evidence set. Score only when comparison benefits from it; findings are more useful than a decorative total.
+Start by stating the intended audience, reader outcome, document authority, evidence set, and applicable custom profile. Score only when comparison benefits from it; findings are more useful than a decorative total.
 
 ## Rubric
 
@@ -16,15 +16,17 @@ Start by stating the intended audience, reader outcome, document authority, and 
 | Consistency | Does it agree with relevant documentation? | conflicting procedures, terminology drift, unexplained scope differences |
 | Maintainability | Can changes be made once and propagated safely? | volatile duplication, needless metadata, no lifecycle signal |
 | Actionability | Can the reader act or decide with confidence? | no next step, no success criteria, unresolved ambiguity hidden as prose |
+| Conformance | Does it satisfy applicable required custom rules? | wrong terminology, missing required structure, unreported exception |
 
 ## Review sequence
 
 1. **Contract:** infer or identify audience, purpose, reader task, scope, and lifecycle.
-2. **Evidence:** trace consequential claims to sources; label fact, assumption, decision, recommendation, hypothesis, and unknown correctly.
-3. **Reader path:** follow the document in the order a target reader would use it.
-4. **System impact:** search likely authoritative sources, contradictions, and duplication.
-5. **Lifecycle:** inspect dates, status language, ownership, supersession, and volatile details.
-6. **Economy:** remove content that does not support the reader outcome.
+2. **Custom rules:** identify applicable scope, separate required rules from preferences, and note conflicts or permitted exceptions.
+3. **Evidence:** trace consequential claims to sources; label fact, assumption, decision, recommendation, hypothesis, and unknown correctly.
+4. **Reader path:** follow the document in the order a target reader would use it.
+5. **System impact:** search likely authoritative sources, contradictions, and duplication.
+6. **Lifecycle:** inspect dates, status language, ownership, supersession, and volatile details.
+7. **Economy:** remove content that does not support the reader outcome.
 
 ## Findings format
 

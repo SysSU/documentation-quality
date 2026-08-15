@@ -13,6 +13,9 @@ Trigger metadata
 Router and invariants
   SKILL.md
         |
+Applicable custom profile
+  user / organization / project / knowledge base
+        |
         +-- Creation -------- document-type references
         +-- Maintenance ----- IA, source-of-truth, KB guidance
         +-- Review ---------- document, health, fresh-reader checklists
@@ -36,10 +39,10 @@ The maintenance and impact-review paths select the authoritative home, inspect c
 ## Data flow
 
 1. A host selects the skill from trigger metadata or explicit invocation.
-2. The router determines creation, maintenance, or review mode.
+2. The router identifies any applicable scoped custom profile and determines creation, maintenance, or review mode.
 3. The agent discovers task context using the host's available filesystem, wiki, vault, connector, search, or conversation tools.
-4. The agent loads the smallest relevant references.
-5. It produces or reviews an artifact, then applies document-level and collection-level checks.
+4. The agent loads the smallest relevant references and layers custom rules over the defaults.
+5. It produces or reviews an artifact, then applies document-level, custom-conformance, and collection-level checks.
 6. Platform integrations optionally improve discovery or add reminders; they do not change the quality model.
 
 ## Trust boundaries

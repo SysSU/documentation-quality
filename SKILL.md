@@ -1,6 +1,6 @@
 ---
 name: documentation-quality
-description: Create, review, and maintain trustworthy documentation across software repositories, AI brains, Obsidian vaults, wikis, plans, research, product artifacts, runbooks, and other knowledge systems. Use when an agent is asked to write or revise a substantial document, document a change, add persistent knowledge, resolve conflicting or duplicate documentation, audit documentation health, or run a fresh-reader review.
+description: Create, review, and maintain trustworthy documentation across software repositories, AI brains, Obsidian vaults, wikis, plans, research, product artifacts, runbooks, and other knowledge systems. Use when an agent is asked to write or revise a substantial document, apply a custom style guide or documentation profile, document a change, add persistent knowledge, resolve conflicting or duplicate documentation, audit documentation health, or run a fresh-reader review.
 ---
 
 # Documentation Quality
@@ -10,11 +10,12 @@ Optimize both the document in front of you and the knowledge system around it. N
 ## Route the task
 
 1. Read [references/core-principles.md](references/core-principles.md) for every substantial task.
-2. Choose one primary mode:
+2. Identify any user, organization, project, or knowledge-base documentation profile supplied in the request or available in scoped instructions. When one exists, or the user requests stricter custom rules, read [references/customization.md](references/customization.md) and load the applicable guide.
+3. Choose one primary mode:
    - **Create or substantially rewrite a document:** follow **Creation mode**.
    - **Store or change persistent knowledge:** follow **Maintenance mode**.
    - **Review without editing:** follow **Review mode**.
-3. Load only the task-specific references listed below.
+4. Load only the task-specific references listed below.
 
 ### Creation mode
 
@@ -30,7 +31,7 @@ Optimize both the document in front of you and the knowledge system around it. N
    - Research: [references/research.md](references/research.md)
    - Runbook or operating procedure: [references/runbook.md](references/runbook.md)
    - README, API, tutorial, how-to, reference, or other software documentation: [references/software-documentation.md](references/software-documentation.md)
-5. Draft with facts, assumptions, recommendations, decisions, hypotheses, and unknowns clearly distinguished. Load [references/writing-style.md](references/writing-style.md) when prose, structure, or procedures are material to the task.
+5. Draft with facts, assumptions, recommendations, decisions, hypotheses, and unknowns clearly distinguished. Load [references/writing-style.md](references/writing-style.md) when prose, structure, or procedures are material to the task, then apply the applicable custom profile as the stricter scoped layer.
 6. Apply [checklists/document-review.md](checklists/document-review.md). For important or high-impact work, also apply [checklists/fresh-reader-review.md](checklists/fresh-reader-review.md).
 
 ### Maintenance mode
@@ -48,7 +49,7 @@ Optimize both the document in front of you and the knowledge system around it. N
 ### Review mode
 
 1. State the document's intended audience and outcome. If absent, mark that as a finding instead of inventing it.
-2. Apply [checklists/document-review.md](checklists/document-review.md).
+2. Apply [checklists/document-review.md](checklists/document-review.md), including any applicable custom profile's required rules.
 3. For collection-wide review, load [checklists/knowledge-base-health.md](checklists/knowledge-base-health.md) and the maintenance references.
 4. For an independent usability pass, apply [checklists/fresh-reader-review.md](checklists/fresh-reader-review.md).
 5. Rank findings by impact. Separate verified errors from risks, suggestions, and unanswered questions.
@@ -57,6 +58,7 @@ Optimize both the document in front of you and the knowledge system around it. N
 
 - Gather available context before asking for information that can be discovered.
 - Never fabricate missing details. Label `Unknown`, `Assumption`, `Open question`, or `TBD`.
+- Apply scoped custom documentation rules over the built-in defaults, but never let style override accuracy, source integrity, safety, accessibility, or explicit user instructions.
 - Prefer one authoritative home per important claim.
 - Do not add metadata mechanically. Use status, owner, decision date, last verified date, or supersession only when lifecycle matters.
 - Preserve decision history: supersede decisions rather than silently rewriting why they were made.
