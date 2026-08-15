@@ -111,7 +111,9 @@ Use $documentation-quality and follow ./DOCUMENTATION_STYLE.md to write this run
 Treat its Required rules as completion criteria.
 ```
 
-The order is simple: your current request wins, then the closest applicable profile, then broader profiles, then this skill's built-in guidance. Custom style rules cannot override accuracy, source integrity, safety, privacy, or accessibility. For profile scopes, strictness, templates, and conflict handling, see [`references/customization.md`](references/customization.md).
+The order is simple: your current request wins, then the closest applicable profile, then broader profiles, then this skill's built-in guidance. Custom style rules cannot override accuracy, source integrity, safety, privacy, or accessibility.
+
+Users create or edit their own profile, such as `DOCUMENTATION_STYLE.md`. The agent—not the user—reads [`references/customization.md`](references/customization.md) for instructions on applying profile scopes, strictness, templates, and conflicts. Do not edit that reference to store personal or project rules.
 
 ## Repository map
 

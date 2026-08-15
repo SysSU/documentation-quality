@@ -1,5 +1,7 @@
 # Custom documentation profiles
 
+This is agent-facing guidance bundled with the skill. Users should not edit this file to configure their documentation rules. Read the user's separate style guide or profile instead.
+
 Layer user, team, organization, project, or knowledge-base rules over this skill without editing the skill itself. A profile may define voice, terminology, mechanics, templates, citations, naming, metadata, lifecycle rules, or review gates.
 
 ## Find the applicable profile
